@@ -1,0 +1,10 @@
+#!/bin/bash
+
+RUN=$1
+
+if [ "$RUN" = "" ]
+then
+  RUN=/usr/local/lib/dukluv/repl.js
+fi
+
+env dukluv -b /usr/local/lib/dukluv/bootstrap.js $RUN
