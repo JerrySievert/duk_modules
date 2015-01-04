@@ -118,7 +118,6 @@ Duktape.modResolve = function (id) {
   }
 
   // ./node_modules/parts/{main}
-  print('./node_modules/' + parts.join('/') + '/package.json');
   if (existsSync('./node_modules/' + parts.join('/') + '/package.json')) {
     try {
       var data = readFileSync('./node_modules/' + parts.join('/') + '/package.json');
