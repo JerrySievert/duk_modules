@@ -1,19 +1,11 @@
 "use strict";
 
 var vm = require('vm');
-function Timer() {
-  var obj = new Duktape.Buffer(uv.new_timer());
-  obj.__proto__ = Timer.prototype;
-  return obj;
-}
 
 var _require = require;
 global.require = function (path) {
   return _require(path);
 }
-
-Timer.prototype.start = uv.timer_start;
-Timer.prototype.stop = uv.timer_stop;
 
 uv.read_start(process.stdin, function (err, chunk) {
   if (err) { throw err; }
